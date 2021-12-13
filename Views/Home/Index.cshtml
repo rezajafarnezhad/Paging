@@ -1,0 +1,41 @@
+﻿
+
+@model Paging.Models.ColorAdminFilter
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<br>
+
+<form id="mform" asp-action="Search" data-ajax="true" data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#Colores" >
+    <div id="Colores">
+        <partial name="_Colores" model="@Model"/>
+    </div>
+</form>
+
+
+
+@section Scripts
+{
+
+    <script>
+
+        function sendPage(pagenum) {
+
+            $("#pageid").val(pagenum);
+            $("#mform").submit();
+
+        }
+
+    </script>
+
+
+}
+
